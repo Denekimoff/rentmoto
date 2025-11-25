@@ -1,122 +1,121 @@
 @import '../main.css';
 
 .routes {
-    position: relative;
+  position: relative;
 }
 
 .routes::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../paper-texture.jpg');
-    opacity: 0.5;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../paper-texture.jpg');
+  opacity: 0.5;
 }
 
 .routes__container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .routes__container__title {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 130%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 130%;
 }
 
 .routes__container__list {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
 }
 
 .routes__container__list__item {
-    margin-bottom: 9rem;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.3s;
+  margin-bottom: 9rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
 }
 
 .routes__container__list__item:hover {
-    transform: translateY(-10%);
-    background-color: #ffffff;
-    box-shadow: 5px 5px 10px grey;
+  transform: translateY(-10%);
+  background-color: #ffffff;
+  box-shadow: 5px 5px 10px grey;
 }
 
-.routes__container__list__item:nth-child(2n){
-    flex-direction: row-reverse;
+.routes__container__list__item:nth-child(2n) {
+  flex-direction: row-reverse;
 }
-
 
 .routes__container__list__item__info {
-    width: 40%;
-    padding-right: 1rem;
+  width: 40%;
+  padding-right: 1rem;
 }
 
 .routes__container__list__item:nth-child(2n) > .routes__container__list__item__info {
-    padding-left: 1rem;
-    text-align: end;
+  padding-left: 1rem;
+  text-align: end;
 }
 
 .routes__container__list__item__info > h4 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 110%;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 110%;
 }
 
 .routes__container__list__item__info > p {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 110%;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 110%;
 }
 
 .routes__container__list__item__info__description {
-    margin-bottom: 2rem;
-    font-weight: 300;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .routes__container__list__item__info__description > p {
-    line-height: 130%;
-    /* margin-bottom: 0.3rem; */
+  line-height: 130%;
+  /* margin-bottom: 0.3rem; */
 }
 
 .routes__container__list__item__info__description > p > span {
-    padding-left: 0.5rem;
-    font-weight: 600;
+  padding-left: 0.5rem;
+  font-weight: 600;
 }
 
 .routes__container__list__item__info__route {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .routes__container__list__item__info__route > h6 {
-    line-height: 130%;
-    font-weight: 600;
+  line-height: 130%;
+  font-weight: 600;
 }
 
 .routes__container__list__item__info__route > p {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .routes__container__list__item__info > button {
-    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-    background: var(--green);
-    color: #ffffff;
-    border-radius: 0.4rem;
-    transition: 0.3s;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  background: var(--green);
+  color: #ffffff;
+  border-radius: 0.4rem;
+  transition: 0.3s;
 }
 
 .routes__container__list__item__info > button:hover {
@@ -129,12 +128,12 @@
 }
 
 .routes__container__list__item__images {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .routes__container__list__item__images > img {
-    width: 45%;
-    object-fit: fill;
+  width: 45%;
+  object-fit: fill;
 }

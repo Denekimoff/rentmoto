@@ -1,38 +1,38 @@
 @import '../main.css';
 
 .testing {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .testing__container {
-    padding-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .testing__container__title {
-    margin-top: 4rem;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 130%;
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 130%;
 }
 
 .testing__container__description {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 130%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 130%;
 }
 
 .testing__container > button {
-    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-    background: var(--green);
-    color: #ffffff;
-    border-radius: 0.4rem;
-    transition: 0.3s;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  background: var(--green);
+  color: #ffffff;
+  border-radius: 0.4rem;
+  transition: 0.3s;
 }
 
 .testing__container > button:hover {

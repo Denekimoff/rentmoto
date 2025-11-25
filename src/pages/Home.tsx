@@ -13,13 +13,13 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      <Offer/>
-      <Routes/>
-      <Testing/>
-      <Gallery/>
-      <OurPerson/>
-      <Conditions/>
-      <Sales/>
+      <Offer />
+      <Routes />
+      <Testing />
+      <Gallery />
+      <OurPerson />
+      <Conditions />
+      <Sales />
     </div>
   )
 }

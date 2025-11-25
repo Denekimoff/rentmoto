@@ -1,66 +1,67 @@
 @import '../main.css';
 
 .sales {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
-.sales__container {}
+.sales__container {
+}
 
 .sales__container__title {
-    margin-top: 4rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .sales__container__list {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
-.sales__container__list__item{
-    max-width: 45%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
+.sales__container__list__item {
+  max-width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .sales__container__list__item__avatar {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .sales__container__list__item__info {
-    padding: 0 1rem 1rem 1rem;
-    background-color: var(--bg-avatar);
+  padding: 0 1rem 1rem 1rem;
+  background-color: var(--bg-avatar);
 }
 
 .sales__container__list__item__info__title {
-    padding-top: 1.5rem;
-    color: var(--green);
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 130%;
+  padding-top: 1.5rem;
+  color: var(--green);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 130%;
 }
 
 .sales__container__list__item__info__description {
-    padding-top: 1rem;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 130%;
+  padding-top: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 130%;
 }
 
 .sales__container__list__item__info > button {
-    margin-top: 1rem;
-    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-    /* background: #ffffff; */
-    color: var(--green);
-    border: 1px solid var(--green);
-    border-radius: 0.4rem;
-    transition: 0.2s;
+  margin-top: 1rem;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  /* background: #ffffff; */
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 0.4rem;
+  transition: 0.2s;
 }
 
 .sales__container__list__item__info > button:hover {
@@ -68,8 +69,8 @@
 }
 
 .sales__container__list__item__info > button:active {
-    background-color: var(--green-hover);
-    color: #ffffff;
-    cursor: grabbing;
-    /* scale: calc(1.05); */
+  background-color: var(--green-hover);
+  color: #ffffff;
+  cursor: grabbing;
+  /* scale: calc(1.05); */
 }
