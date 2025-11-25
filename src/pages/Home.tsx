@@ -1,0 +1,25 @@
+import React from 'react'
+import Counter from '../components/Counter'
+import Banner from '../components/Banner'
+import Offer from '../components/Offer'
+import Routes from '../components/Routes'
+import Testing from '../components/Testing'
+import Gallery from '../components/Gallery'
+import OurPerson from '../components/OurPerson'
+import Conditions from '../components/Conditions'
+import Sales from '../components/Sales'
+
+export default function Home() {
+  return (
+    <div>
+      <Banner />
+      <Offer/>
+      <Routes/>
+      <Testing/>
+      <Gallery/>
+      <OurPerson/>
+      <Conditions/>
+      <Sales/>
+    </div>
+  )
+}

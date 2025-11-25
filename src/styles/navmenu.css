@@ -1,0 +1,22 @@
+@import '../main.css';
+
+.nav-menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu__list__item {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+
+.nav-menu__list__item:hover {
+  color: var(--green);
+  cursor: pointer;
+}
+
+.nav-menu__list__item:active {
+  color: var(--green-active);
+}

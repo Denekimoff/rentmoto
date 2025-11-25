@@ -1,0 +1,61 @@
+@import '../main.css';
+
+.banner {
+  width: 100%;
+  min-height: 50vh;
+  padding-bottom: 5rem;
+  background-image: url('/cfexp-x4basic-pic-4\ 2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-banner);
+}
+.banner-view {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+.banner-view__title {
+  padding-top: 20vh;
+  padding-bottom: 3rem;
+  max-width: 50vw;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 120%;
+  text-shadow: 1px 1px 10px #000000;
+}
+
+.banner-view__description {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 110%;
+  text-shadow: 1px 1px 10px #000000;
+}
+
+.banner-view > .button {
+  position: relative;
+  border-radius: 0.4rem;
+  background: var(--green);
+  padding: 0.5rem 4.5rem 0.5rem 2.5rem;
+  transition: 0.3s;
+}
+
+.banner-view > .button:after {
+  position: absolute;
+  content: '\2192';
+  right: 2rem;
+  color: inherit;
+}
+
+.banner-view > .button:hover {
+  cursor: pointer;
+  background-color: var(--green-hover);
+}
+
+.banner-view > .button:active {
+  scale: calc(1.05);
+}
