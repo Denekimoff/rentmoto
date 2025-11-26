@@ -6,12 +6,12 @@ import Button from './Button'
 export default function Sales() {
   const salesData = [
     {
-      image: '/public/sales-1.png',
+      image: '/sales-1.png',
       title: 'Скидка 15%',
       description: 'в честь Дня Рождения - дарим имениннику скидку 15%',
     },
     {
-      image: '/public/sales-2.png',
+      image: '/sales-2.png',
       title: 'Скидка 10%',
       description: 'дарим скидку 10% на первую поездку!',
     },

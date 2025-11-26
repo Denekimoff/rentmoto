@@ -15,8 +15,8 @@ export default function Routes() {
       route:
         'Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) - Форсаж',
       image: {
-        1: '/public/base-route-1.png',
-        2: '/public/base-route-2.png',
+        1: '/base-route-1.png',
+        2: '/base-route-2.png',
       },
     },
     {
@@ -28,8 +28,8 @@ export default function Routes() {
       route:
         'Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) - Форсаж',
       image: {
-        1: '/public/long-route-1.png',
-        2: '/public/long-route-2.png',
+        1: '/long-route-1.png',
+        2: '/long-route-2.png',
       },
     },
     {
@@ -40,8 +40,8 @@ export default function Routes() {
       rate: '5',
       route: 'Форсаж - Голубая бухта – Заброшенная Тур База – Сухогруз Рио - Форсаж',
       image: {
-        1: '/public/expirience-route-1.png',
-        2: '/public/expirience-route-2.png',
+        1: '/expirience-route-1.png',
+        2: '/expirience-route-2.png',
       },
     },
   ]
