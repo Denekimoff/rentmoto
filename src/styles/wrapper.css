@@ -8,3 +8,9 @@
     max-width: 60%;
   }
 }
+
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 95%;
+  }
+}
