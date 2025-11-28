@@ -1,0 +1,25 @@
+@import '../main.css';
+
+.contacts__container {
+    padding: var(--section-padding);
+}
+
+.contacts__container__title {
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: var(--fz-h3-h4);
+    font-weight: 700;
+}
+
+.contacts__container__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 860px) {
+    .contacts__container__menu {
+        flex-direction: column;
+    }
+}

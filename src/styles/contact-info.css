@@ -1,0 +1,37 @@
+@import '../main.css';
+
+.contact-info {
+    width: 49%;
+}
+
+@media (max-width: 860px) {
+    .contact-info {
+        width: 100%;
+    }
+}
+
+.contact-info__address {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-info__address > a, .contact-info__address > div {
+    width: 48%;
+    padding-bottom: 1rem;
+    font-weight: 300;
+}
+
+.contact-info__address > a:hover {
+    color: var(--green);
+}
+
+/* .contact-info__address > div {
+    width: 48%;
+    padding-bottom: 1rem;
+} */
+
+.contact-info__social {}

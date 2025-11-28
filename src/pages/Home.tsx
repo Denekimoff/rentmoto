@@ -9,6 +9,7 @@ import OurPerson from '../components/OurPerson'
 import Conditions from '../components/Conditions'
 import Sales from '../components/Sales'
 import Gift from '../components/Gift'
+import Contacts from '../components/Contacts'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Conditions />
       <Sales />
       <Gift/>
+      <Contacts/>
     </div>
   )
 }
