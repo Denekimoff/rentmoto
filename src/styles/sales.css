@@ -1,29 +1,26 @@
 @import '../main.css';
 
-.sales {
-  margin-bottom: 4rem;
-}
-
 .sales__container {
+  padding: var(--section-padding);
 }
 
 .sales__container__title {
-  margin-top: 4rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--fz-h3-h4);
   font-weight: 700;
 }
 
 .sales__container__list {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
   gap: 1rem;
 }
 
 .sales__container__list__item {
-  max-width: 45%;
+  max-width: 49%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,7 +39,7 @@
 .sales__container__list__item__info__title {
   padding-top: 1.5rem;
   color: var(--green);
-  font-size: 2rem;
+  font-size: var(--fz-h3-h4);
   font-weight: 700;
   line-height: 130%;
 }
@@ -57,11 +54,10 @@
 .sales__container__list__item__info > button {
   margin-top: 1rem;
   padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  /* background: #ffffff; */
   color: var(--green);
   border: 1px solid var(--green);
   border-radius: 0.4rem;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .sales__container__list__item__info > button:hover {
@@ -72,5 +68,4 @@
   background-color: var(--green-hover);
   color: #ffffff;
   cursor: grabbing;
-  /* scale: calc(1.05); */
 }

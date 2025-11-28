@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from './Wrapper'
 import Navmenu from './Navmenu'
-import Logotip from '/public/logo.svg'
+import Logotip from '/logo.svg'
 import Button from './Button'
 import '../styles/header.css'
 

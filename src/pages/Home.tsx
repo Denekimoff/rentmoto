@@ -8,6 +8,7 @@ import Gallery from '../components/Gallery'
 import OurPerson from '../components/OurPerson'
 import Conditions from '../components/Conditions'
 import Sales from '../components/Sales'
+import Gift from '../components/Gift'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <OurPerson />
       <Conditions />
       <Sales />
+      <Gift/>
     </div>
   )
 }

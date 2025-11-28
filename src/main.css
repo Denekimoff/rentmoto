@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 
 :root {
+  --section-padding: 3rem 0;
   --bg-avatar: #f4f4f4;
   --bg-grey: #00000040;
   --text: #121214;
+  --fz-h3-h4: 2rem;
   --text-banner: #ffffff;
   --grey: #919395;
   --green: #037e8c;
@@ -40,7 +42,7 @@ html {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   html {
     font-size: 8px;
   }

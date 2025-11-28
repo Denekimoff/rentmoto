@@ -5,8 +5,7 @@
 }
 
 .offer__list {
-  margin-top: 0.5rem;
-  padding: 2.5rem 0;
+  padding: var(--section-padding);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
