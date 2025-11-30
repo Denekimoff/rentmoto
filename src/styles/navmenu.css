@@ -8,8 +8,13 @@
 
 .nav-menu__list__item {
   margin: 0.5rem;
-  padding: 0.5rem;
+  color: #f4f4f4;
   transition: 0.2s;
+}
+
+.nav-menu__list__item__link {
+  padding: 0.5rem;
+  color: inherit;
 }
 
 .nav-menu__list__item:hover {

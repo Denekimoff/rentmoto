@@ -1,5 +1,4 @@
 import React from 'react'
-import Counter from '../components/Counter'
 import Banner from '../components/Banner'
 import Offer from '../components/Offer'
 import Routes from '../components/Routes'
@@ -11,10 +10,11 @@ import Sales from '../components/Sales'
 import Gift from '../components/Gift'
 import Contacts from '../components/Contacts'
 import Extra from '../components/Extra'
+import '../styles/home.css'
 
 export default function Home() {
   return (
-    <div>
+    <div className='home'>
       <Banner />
       <Offer />
       <Routes />

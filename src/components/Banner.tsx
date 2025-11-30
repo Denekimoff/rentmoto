@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/banner.css'
 import Button from './Button'
 import Wrapper from './Wrapper'
+import Header from './Header'
 
 export default function Banner() {
   return (

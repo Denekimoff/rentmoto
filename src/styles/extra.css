@@ -1,7 +1,5 @@
 @import '../main.css';
 
-.extra {}
-
 .extra__container {
   padding: var(--section-padding);
 }
