@@ -34,13 +34,11 @@
 .contact-box > a::after {
   position: absolute;
   content: '\260E';
-  /* content: '\260F'; */
-  /* content: '\2706'; */
   left: -1.5rem;
 }
 
 .contact-box > a:hover {
-  color: var(--green);
+  color: var(--green-hover);
   cursor: pointer;
 }
 

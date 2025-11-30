@@ -3,7 +3,7 @@
 .yandex-map {
     width: 49%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 

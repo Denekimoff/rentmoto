@@ -24,11 +24,13 @@ export default function Sales() {
           <ul className="sales__container__list">
             {salesData.map((el, id) => (
               <li key={id} className="sales__container__list__item">
-                <img
-                  src={el.image}
-                  alt={`Аватар ${id + 1}`}
-                  className="sales__container__list__item__avatar"
-                />
+                <div>
+                  <img
+                    src={el.image}
+                    alt={`Аватар ${id + 1}`}
+                    className="sales__container__list__item__avatar"
+                  />
+                </div>
                 <div className="sales__container__list__item__info">
                   <p className="sales__container__list__item__info__title">{el.title}</p>
                   <p className="sales__container__list__item__info__description">

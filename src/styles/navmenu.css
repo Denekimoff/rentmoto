@@ -18,5 +18,5 @@
 }
 
 .nav-menu__list__item:active {
-  color: var(--green-active);
+  color: var(--green-hover);
 }

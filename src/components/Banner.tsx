@@ -8,7 +8,7 @@ export default function Banner() {
     <section className="banner">
       <Wrapper>
         <div className="banner-view">
-          <h1 className="banner-view__title">Экскурсии на квадроциклах в Геленджике</h1>
+          <h1 className="banner-view__title">Экскурсии на квадроциклах в Минске</h1>
           <p className="banner-view__description">приезжайте за новыми ощущениями и эмоциями!</p>
           <Button text="Подобрать маршрут" />
         </div>
