@@ -35,9 +35,11 @@
   transition: 0.3s;
 }
 
-.testing__container > button:hover {
-  cursor: pointer;
-  background-color: var(--green-hover);
+@media (hover: hover) {
+  .testing__container > button:hover {
+    cursor: pointer;
+    background-color: var(--green-hover);
+  }
 }
 
 .testing__container > button:active {

@@ -44,16 +44,17 @@
 
 .gallery__container__list__item {
   margin-bottom: 1rem;
+  max-width: 32%;
   transition: 0.3s;
 }
 
-/* .gallery__container__list__item:hover {
-    scale: 1.2;
+.gallery__container__list__item:hover {
+    scale: 1.1;
     z-index: 2;
-} */
+}
 
-@media (max-width: 1000px) {
+@media (max-width: 860px) {
   .gallery__container__list__item {
-    max-width: 32%;
+    max-width: 40%;
   }
 }

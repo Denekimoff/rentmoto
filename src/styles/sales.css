@@ -41,13 +41,6 @@
   transition: 0.3s;
 }
 
-.sales__container__list__item__info > .button:hover {
-  background-color: var(--green);
-  color: #ffffff;
-}
-.sales__container__list__item:hover > div > .sales__container__list__item__avatar {
-  scale: 1.15;
-}
 
 .sales__container__list__item__info {
   width: 100%;
@@ -80,8 +73,17 @@
   transition: 0.3s;
 }
 
-.sales__container__list__item__info > button:hover {
-  cursor: grab;
+@media (hover: hover) {
+  .sales__container__list__item__info > .button:hover {
+    background-color: var(--green);
+    color: #ffffff;
+  }
+  .sales__container__list__item:hover > div > .sales__container__list__item__avatar {
+    scale: 1.15;
+  }
+  .sales__container__list__item__info > button:hover {
+    cursor: grab;
+  }
 }
 
 .sales__container__list__item__info > button:active {

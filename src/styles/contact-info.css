@@ -37,8 +37,10 @@
     color: var(--green);
 }
 
-.contact-info__address__list__item > a:hover {
-    color: var(--green-hover);
+@media (hover: hover) {
+    .contact-info__address__list__item > a:hover {
+        color: var(--green-hover);
+    }
 }
 
 .contact-info__social {

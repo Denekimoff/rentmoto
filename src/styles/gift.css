@@ -60,15 +60,18 @@
   transition: 0.3s;
 }
 
-.gift__container__cart__info > button:hover {
-  cursor: pointer;
-  background-color: var(--green);
-  color: #ffffff;
+@media (hover: hover) {
+  .gift__container__cart__info > button:hover {
+    cursor: pointer;
+    background-color: var(--green);
+    color: #ffffff;
+  }
 }
 
 .gift__container__cart__info > button:active {
   transform: scale(1.05);
   background-color: var(--green-hover);
+  color: #ffffff;
 }
 
 .gift__container__cart__image {

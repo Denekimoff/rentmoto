@@ -1,9 +1,5 @@
 @import '../main.css';
 
-.offer {
-  width: 100vw;
-}
-
 .offer__list {
   padding: var(--section-padding);
   display: flex;

@@ -20,7 +20,6 @@
   box-sizing: border-box;
 }
 
-/* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -29,28 +28,74 @@ html {
   color: var(--text);
 }
 
-@media (min-width: 2500px) {
+@media (min-width: 1970px) {
   html {
     font-size: 24px;
   }
+
+  .wrapper {
+    max-width: 1700px;
+  }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1960px) {
+  html {
+    font-size: 18px;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 16px;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
   html {
     font-size: 14px;
+  }
+
+  .wrapper {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    max-width: 800px;
   }
 }
 
 
 @media (max-width: 860px) {
   html {
-    font-size: 8px;
+    font-size: 10px;
+  }
+
+  .wrapper {
+    max-width: 90%;
   }
 }
 
 @media (max-width: 600px) {
   html {
-    font-size: 6px;
+    font-size: 8px;
+  }
+
+  .wrapper {
+    max-width: 98%;
   }
 }
 
@@ -119,7 +164,7 @@ li {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: var(--green);
+  /* color: var(--green); */
 }
 
 /* Make images easier to work with */
@@ -145,9 +190,4 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
-}
-
-body {
-  margin: 0;
-  color: var(--text);
 }

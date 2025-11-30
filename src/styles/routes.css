@@ -48,10 +48,12 @@
   transition: 0.3s;
 }
 
-.routes__container__list__item:hover {
-  transform: translateY(-2%);
-  background-color: #f4f4f4;
-  box-shadow: 3px 3px 7px grey;
+@media (hover: hover) {
+  .routes__container__list__item:hover {
+    transform: translateY(-2%);
+    background-color: #f4f4f4;
+    box-shadow: 3px 3px 7px grey;
+  }
 }
 
 .routes__container__list__item:nth-child(2n) {
@@ -59,7 +61,7 @@
 }
 
 .routes__container__list__item__info {
-  width: 40%;
+  width: 49%;
   padding-right: 1rem;
 }
 
@@ -89,7 +91,6 @@
 
 .routes__container__list__item__info__description > p {
   line-height: 130%;
-  /* margin-bottom: 0.3rem; */
 }
 
 .routes__container__list__item__info__description > p > span {
@@ -117,10 +118,11 @@
   border-radius: 0.4rem;
   transition: 0.3s;
 }
-
-.routes__container__list__item__info > button:hover {
-  cursor: pointer;
-  background-color: var(--green-hover);
+@media (hover: hover) {
+  .routes__container__list__item__info > button:hover {
+    cursor: pointer;
+    background-color: var(--green-hover);
+  }
 }
 
 .routes__container__list__item__info > button:active {
@@ -128,12 +130,13 @@
 }
 
 .routes__container__list__item__images {
+  width: 49%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .routes__container__list__item__images > img {
-  width: 45%;
+  width: 47%;
   object-fit: fill;
 }

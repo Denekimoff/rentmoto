@@ -50,9 +50,11 @@
   color: inherit;
 }
 
-.banner-view > .button:hover {
-  cursor: pointer;
-  background-color: var(--green-hover);
+@media (hover: hover) {
+  .banner-view > .button:hover {
+    cursor: pointer;
+    background-color: var(--green-hover);
+  }
 }
 
 .banner-view > .button:active {

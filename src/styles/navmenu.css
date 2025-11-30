@@ -17,9 +17,11 @@
   color: inherit;
 }
 
-.nav-menu__list__item:hover {
-  color: var(--green);
-  cursor: pointer;
+@media (hover: hover) {
+  .nav-menu__list__item:hover {
+    color: var(--green);
+    cursor: pointer;
+  }
 }
 
 .nav-menu__list__item:active {

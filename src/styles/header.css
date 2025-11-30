@@ -30,33 +30,41 @@
 }
 
 .header__container__contact-box > a {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   position: relative;
+  color: #ffffff;
+  transition: color 0.3s;
 }
 
-.header__container__contact-box > a::after {
+/* .header__container__contact-box > a::after {
   position: absolute;
   content: '\260E';
   left: -1.5rem;
-}
-
-.header__container__contact-box > a:hover {
-  color: var(--green-hover);
-  cursor: pointer;
-}
+} */
 
 .header__container__contact-box > .button {
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   border-radius: 0.4rem;
-  background-color: var(--grey);
+  background-color: var(--green);
   transition: 0.3s;
 }
 
-.header__container__contact-box > .button:hover {
-  background-color: var(--green-hover);
-  cursor: pointer;
+@media (hover: hover) {
+  .header__container__contact-box > a:hover {
+    color: var(--green);
+    cursor: pointer;
+  }
+  .header__container__contact-box > .button:hover {
+    background-color: var(--green-hover);
+    cursor: pointer;
+  }
 }
 
 .header__container__contact-box > .button:active {
   transform: scale(1.05);
+}
+@media (hover: none) {
+  .header__container__contact-box > .button:active {
+    background-color: var(--green-hover);
+  }
 }
