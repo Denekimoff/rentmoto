@@ -1,21 +1,12 @@
 import React from 'react'
+import { useStore } from 'zustand'
+import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
-import '../styles/sales.css'
 import Button from './Button'
+import '../styles/sales.css'
 
 export default function Sales() {
-  const salesData = [
-    {
-      image: '/sales-1.png',
-      title: 'Скидка 15%',
-      description: 'в честь Дня Рождения - дарим имениннику скидку 15%',
-    },
-    {
-      image: '/sales-2.png',
-      title: 'Скидка 10%',
-      description: 'дарим скидку 10% на первую поездку!',
-    },
-  ]
+  const salesData = useStore(storeStates, (state) => state.data.salesData)
   return (
     <section className="sales">
       <Wrapper>

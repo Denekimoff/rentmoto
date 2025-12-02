@@ -1,7 +1,7 @@
 @import '../main.css';
 
 .conditions {
-  background-image: url('/bg-conditions.png');
+  background-image: url('/bg-conditions.webp');
   background-repeat: no-repeat;
   background-size: cover;
 }

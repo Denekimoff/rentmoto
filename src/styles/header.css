@@ -1,7 +1,7 @@
 @import '../main.css';
 
 .header {
-  position: fixed ;
+  position: fixed;
   top: 0;
   width: 100vw;
   color: var(--text-banner);
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.header__container__logo__link > img{
+.header__container__logo__link > img {
   max-width: 4rem;
   cursor: pointer;
 }

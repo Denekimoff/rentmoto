@@ -14,7 +14,7 @@ import '../styles/home.css'
 
 export default function Home() {
   return (
-    <div className='home'>
+    <div className="home">
       <Banner />
       <Offer />
       <Routes />
@@ -23,9 +23,9 @@ export default function Home() {
       <OurPerson />
       <Conditions />
       <Sales />
-      <Gift/>
-      <Extra/>
-      <Contacts/>
+      <Gift />
+      <Extra />
+      <Contacts />
     </div>
   )
 }

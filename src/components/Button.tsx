@@ -1,6 +1,5 @@
 import React from 'react'
-import { ButtonType } from '../types/ButtonType'
-import '../styles/button.css'
+import { ButtonType } from '../types/types'
 
 export default function Button({ text }: ButtonType) {
   return <button className="button">{text}</button>

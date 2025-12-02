@@ -1,16 +1,11 @@
 import React from 'react'
+import { useStore } from 'zustand'
+import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
 import '../styles/conditions.css'
 
 export default function Conditions() {
-  const conditionsData = [
-    'При прокате или аренде строго соблюдать правила техники безопасности и все требования инструктора!',
-    'К управлению НЕ ДОПУСКАЮТСЯ лица младше 16 лет и лица в алкогольном опьянении!',
-    'Распивать спиртные напитки во время проката, аренды ЗАПРЕЩЕНО! (После? На ваше усмотрение)',
-    'Управление осуществляйте в меру своих сил и возможностей. Не переоценивайте себя! Это опасно!!!',
-    'Перед каждым катанием опытный инструктор научит Вас основам управления и будет сопровождать на протяжении всего маршрута.',
-    'При прокате или аренде строго соблюдать правила техники безопасности и все требования инструктора!',
-  ]
+  const conditionsData = useStore(storeStates, (state) => state.data.conditionsData)
   return (
     <section className="conditions">
       <Wrapper>

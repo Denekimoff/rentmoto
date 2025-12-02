@@ -6,15 +6,16 @@ import '../styles/contacts.css'
 
 export default function Contacts() {
   return (
-  <section className='contacts'>
-    <Wrapper>
-      <div className="contacts__container">
-        <h3 className='contacts__container__title'>Контакты</h3>
-        <div className="contacts__container__menu">
-          <ContactInfo/>
-          <YandexMap/>
+    <section className="contacts">
+      <Wrapper>
+        <div className="contacts__container">
+          <h3 className="contacts__container__title">Контакты</h3>
+          <div className="contacts__container__menu">
+            <ContactInfo />
+            <YandexMap />
+          </div>
         </div>
-      </div>
-    </Wrapper>
-  </section>
-)}
+      </Wrapper>
+    </section>
+  )
+}

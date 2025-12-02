@@ -33,14 +33,13 @@
   overflow: hidden;
 }
 
-.sales__container__list__item__avatar{
+.sales__container__list__item__avatar {
   transition: 0.3s;
 }
 
 .sales__container__list__item__info > .button {
   transition: 0.3s;
 }
-
 
 .sales__container__list__item__info {
   width: 100%;

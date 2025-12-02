@@ -12,7 +12,12 @@ export default function Header() {
       <Wrapper>
         <div className="header__container">
           <div className="header__container__logo">
-            <Link to='banner' smooth={true} duration={500} className='header__container__logo__link'>
+            <Link
+              to="banner"
+              smooth={true}
+              duration={500}
+              className="header__container__logo__link"
+            >
               <img src={Logotip} alt="logo" />
             </Link>
           </div>

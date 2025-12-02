@@ -1,31 +1,11 @@
 import React from 'react'
+import { useStore } from 'zustand'
+import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
-import { OfferDataType } from '../types/offerDataType'
 import '../styles/offer.css'
 
 export default function Offer() {
-  const offerData: Array<OfferDataType> = [
-    {
-      logo: '/1.svg',
-      title: 'Увлекательные экскурсии',
-      description: 'Маршруты от лесных дорожек до полного бездорожья!',
-    },
-    {
-      logo: '/2.svg',
-      title: 'Надежная техника',
-      description: '15 квадроциклов всех японских брендов',
-    },
-    {
-      logo: '/3.svg',
-      title: 'Экипировка бесплатно',
-      description: 'Необходимая экипировка выдается бесплатно',
-    },
-    {
-      logo: '/4.svg',
-      title: 'Опытные инструктора',
-      description: 'Обеспечат полную безопасность Вашего отдыха',
-    },
-  ]
+  const offerData = useStore(storeStates, (state) => state.data.offerData)
   return (
     <section className="offer">
       <Wrapper>

@@ -1,16 +1,11 @@
 import React from 'react'
+import { useStore } from 'zustand'
+import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
 import '../styles/gallery.css'
 
 export default function Gallery() {
-  const galleryData = [
-    '/gallery1.png',
-    '/gallery2.png',
-    '/gallery3.png',
-    '/gallery1.png',
-    '/gallery2.png',
-    '/gallery3.png',
-  ]
+  const galleryData = useStore(storeStates, (state) => state.data.galleryData)
   return (
     <section className="gallery">
       <Wrapper>
