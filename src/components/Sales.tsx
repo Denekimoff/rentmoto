@@ -7,6 +7,13 @@ import '../styles/sales.css'
 
 export default function Sales() {
   const salesData = useStore(storeStates, (state) => state.data.salesData)
+  const openCallMeModal = useStore(storeStates, (state) => state.openCallMeModal)
+  const setText = useStore(storeStates, (state) => state.setSelectedText)
+
+  const handleButtonClick = (text: string) => {
+    setText(text)
+    openCallMeModal()
+  }
   return (
     <section className="sales">
       <Wrapper>
@@ -23,11 +30,14 @@ export default function Sales() {
                   />
                 </div>
                 <div className="sales__container__list__item__info">
-                  <p className="sales__container__list__item__info__title">{el.title}</p>
+                  <p className="sales__container__list__item__info__title">Скидка{el.title}</p>
                   <p className="sales__container__list__item__info__description">
                     {el.description}
                   </p>
-                  <Button text="Забрать!" />
+                  <Button
+                    text="Забрать!"
+                    onClick={() => handleButtonClick(`Получить скидку ${el.title}`)}
+                  />
                 </div>
               </li>
             ))}

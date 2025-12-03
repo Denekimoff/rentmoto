@@ -20,10 +20,6 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
         section: 'contacts',
         text: 'КОНТАКТЫ',
       },
-      {
-        section: 'reserve',
-        text: 'ЗАБРОНИРОВАТЬ',
-      },
     ],
     offerData: [
       {
@@ -119,12 +115,12 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
     salesData: [
       {
         image: '/sales-1.webp',
-        title: 'Скидка 15%',
+        title: ' 15%',
         description: 'в честь Дня Рождения - дарим имениннику скидку 15%',
       },
       {
         image: '/sales-2.webp',
-        title: 'Скидка 10%',
+        title: ' 10%',
         description: 'дарим скидку 10% на первую поездку!',
       },
     ],
@@ -201,6 +197,32 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       booking: {
         ...state.booking,
         selectedRoute: null,
+        isModalOpen: false,
+      },
+    })),
+  callMe: {
+    selectedText: '',
+    isModalOpen: false,
+  },
+  setSelectedText: (text: string) =>
+    set((state) => ({
+      callMe: {
+        ...state.callMe,
+        selectedText: text,
+      },
+    })),
+  openCallMeModal: () =>
+    set((state) => ({
+      callMe: {
+        ...state.callMe,
+        isModalOpen: true,
+      },
+    })),
+  closeCallMeModal: () =>
+    set((state) => ({
+      callMe: {
+        ...state.callMe,
+        selectedText: '',
         isModalOpen: false,
       },
     })),

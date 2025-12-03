@@ -4,7 +4,7 @@ import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
 import { Button } from './Button'
 import '../styles/routes.css'
-import BookingModal from './BookingModal'
+import { BookingModal } from './BookingModal'
 
 export default function Routes() {
   const routesData = useStore(storeStates, (state) => state.data.routesData)

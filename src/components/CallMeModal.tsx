@@ -1,34 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
-import { FormDataType, FormErrorsType } from '../types/types'
+import { FormCallMeType, FormErrorsType } from '../types/types'
 import {
   extractDigits,
   formatPhoneNumber,
   handleContinueScroll,
   handleStopScroll,
-  validateDate,
   validatePhone,
 } from '../functions'
 import '../styles/booking-modal.css'
 
-export const BookingModal: React.FC = () => {
-  const isOpen = useStore(storeStates, (state) => state.booking.isModalOpen)
-  const selectedRoute = useStore(storeStates, (state) => state.booking.selectedRoute)
-  const closeModal = useStore(storeStates, (state) => state.closeBookingModal)
+export const CallMeModal: React.FC = () => {
+  const isOpen = useStore(storeStates, (state) => state.callMe.isModalOpen)
+  const selectedText = useStore(storeStates, (state) => state.callMe.selectedText)
+  const closeModal = useStore(storeStates, (state) => state.closeCallMeModal)
 
-  const [formData, setFormData] = useState<FormDataType>({
+  const [formData, setFormData] = useState<FormCallMeType>({
     name: '',
     phone: '',
-    telegram: '',
-    bookingDate: '',
   })
 
   const [errors, setErrors] = useState<FormErrorsType>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  // Минимальная дата (сегодня)
-  const minDate = new Date().toISOString().split('T')[0]
 
   const validateForm = (): boolean => {
     const newErrors: FormErrorsType = {}
@@ -45,13 +39,6 @@ export const BookingModal: React.FC = () => {
       newErrors.phone = 'Введите номер телефона'
     } else if (!validatePhone(formData.phone)) {
       newErrors.phone = 'Введите номер в формате +375 (XX) XXX-XX-XX'
-    }
-
-    // Валидация даты
-    if (!formData.bookingDate) {
-      newErrors.bookingDate = 'Выберите дату'
-    } else if (!validateDate(formData.bookingDate)) {
-      newErrors.bookingDate = 'Дата не может быть в прошлом'
     }
 
     setErrors(newErrors)
@@ -98,9 +85,7 @@ export const BookingModal: React.FC = () => {
       const bookingData = {
         name: formData.name.trim(),
         phone: `+${cleanPhone}`,
-        telegram: formData.telegram.trim() || null,
-        route: selectedRoute,
-        bookingDate: formData.bookingDate,
+        text: selectedText,
         submittedAt: new Date().toISOString(),
       }
 
@@ -109,9 +94,7 @@ export const BookingModal: React.FC = () => {
       // Имитация запроса
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
-      alert(
-        `✅ Заявка отправлена!\nМаршрут: ${selectedRoute}\nДата: ${new Date(formData.bookingDate).toLocaleDateString('ru-RU')}\nМы скоро свяжемся с вами!`,
-      )
+      alert(`✅ Заявка отправлена!\nМы скоро свяжемся с вами!`)
 
       handleClose()
     } catch (error) {
@@ -124,7 +107,7 @@ export const BookingModal: React.FC = () => {
 
   const handleClose = () => {
     closeModal()
-    setFormData({ name: '', phone: '', telegram: '', bookingDate: '' })
+    setFormData({ name: '', phone: '' })
     setErrors({})
   }
 
@@ -143,7 +126,7 @@ export const BookingModal: React.FC = () => {
     <div className="modal-overlay" onClick={handleClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Бронирование маршрута</h2>
+          <h2>{selectedText}</h2>
           <button className="modal-close" onClick={handleClose}>
             ×
           </button>
@@ -178,47 +161,9 @@ export const BookingModal: React.FC = () => {
             {errors.phone && <span className="error-message">{errors.phone}</span>}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="telegram">Никнейм в Телеграм (необязательно)</label>
-            <input
-              type="text"
-              id="telegram"
-              name="telegram"
-              value={formData.telegram}
-              onChange={handleChange}
-              placeholder="@username"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="route">Выбранный маршрут</label>
-            <input
-              type="text"
-              id="route"
-              name="route"
-              value={selectedRoute || ''}
-              readOnly
-              className="readonly"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="bookingDate">Выберите дату *</label>
-            <input
-              type="date"
-              id="bookingDate"
-              name="bookingDate"
-              value={formData.bookingDate}
-              onChange={handleChange}
-              min={minDate}
-              className={errors.bookingDate ? 'error' : ''}
-            />
-            {errors.bookingDate && <span className="error-message">{errors.bookingDate}</span>}
-          </div>
-
           <div className="form-footer">
             <button type="submit" className="submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'Отправка...' : 'Забронировать'}
+              {isSubmitting ? 'Отправка...' : 'Отправить'}
             </button>
             <p className="required-note">* - обязательные поля</p>
           </div>

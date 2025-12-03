@@ -76,22 +76,37 @@ export type BookingStateType = {
   isModalOpen: boolean
 }
 
+export type CallMeStateType = {
+  selectedText: string
+  isModalOpen: boolean
+}
+
 export type StoreStatesType = {
   data: DataStateType
   booking: BookingStateType
   setSelectedRoute: (route: string) => void
   openBookingModal: () => void
   closeBookingModal: () => void
+  callMe: CallMeStateType
+  setSelectedText: (text: string) => void
+  openCallMeModal: () => void
+  closeCallMeModal: () => void
 }
 
 export type FormDataType = {
   name: string
   phone: string
   telegram: string
+  bookingDate: string
+}
+export type FormCallMeType = {
+  name: string
+  phone: string
 }
 
 export type FormErrorsType = {
   name?: string
   phone?: string
   telegram?: string
+  bookingDate?: string
 }

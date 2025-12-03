@@ -10,6 +10,7 @@ import Sales from '../components/Sales'
 import Gift from '../components/Gift'
 import Contacts from '../components/Contacts'
 import Extra from '../components/Extra'
+import { CallMeModal } from '../components/CallMeModal'
 import '../styles/home.css'
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <Gift />
       <Extra />
       <Contacts />
+      <CallMeModal />
     </div>
   )
 }
