@@ -2,11 +2,19 @@ import React from 'react'
 import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
-import Button from './Button'
+import { Button } from './Button'
 import '../styles/routes.css'
+import BookingModal from './BookingModal'
 
 export default function Routes() {
   const routesData = useStore(storeStates, (state) => state.data.routesData)
+  const setSelectedRoute = useStore(storeStates, (state) => state.setSelectedRoute)
+  const openBookingModal = useStore(storeStates, (state) => state.openBookingModal)
+
+  const handleBookClick = (routeTitle: string) => {
+    setSelectedRoute(routeTitle)
+    openBookingModal()
+  }
   return (
     <section className="routes">
       <Wrapper>
@@ -33,11 +41,11 @@ export default function Routes() {
                     <h6>МАРШРУТ:</h6>
                     <p>{el.route}</p>
                   </div>
-                  <Button text="Забронировать" />
+                  <Button text="Забронировать" onClick={() => handleBookClick(el.title)} />
                 </div>
                 <div className="routes__container__list__item__images">
-                  {el.image.map((el, id) => (
-                    <img key={id} src={el} alt={`Изображение ${id + 1}`} />
+                  {el.image.map((el, idx) => (
+                    <img key={idx} src={el} alt={`Изображение ${idx + 1}`} />
                   ))}
                 </div>
               </div>
@@ -45,6 +53,7 @@ export default function Routes() {
           </div>
         </div>
       </Wrapper>
+      <BookingModal />
     </section>
   )
 }

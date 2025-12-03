@@ -1,5 +1,6 @@
 export type ButtonType = {
   text?: string
+  onClick?: () => void
 }
 
 export type ImageType = Array<string>
@@ -70,6 +71,27 @@ export type DataStateType = {
   socialData: Array<SocialDataType>
 }
 
+export type BookingStateType = {
+  selectedRoute: string | null
+  isModalOpen: boolean
+}
+
 export type StoreStatesType = {
   data: DataStateType
+  booking: BookingStateType
+  setSelectedRoute: (route: string) => void
+  openBookingModal: () => void
+  closeBookingModal: () => void
+}
+
+export type FormDataType = {
+  name: string
+  phone: string
+  telegram: string
+}
+
+export type FormErrorsType = {
+  name?: string
+  phone?: string
+  telegram?: string
 }

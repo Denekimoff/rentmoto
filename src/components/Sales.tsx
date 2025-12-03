@@ -2,7 +2,7 @@ import React from 'react'
 import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
 import Wrapper from './Wrapper'
-import Button from './Button'
+import { Button } from './Button'
 import '../styles/sales.css'
 
 export default function Sales() {

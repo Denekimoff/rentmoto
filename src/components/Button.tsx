@@ -1,6 +1,8 @@
 import React from 'react'
 import { ButtonType } from '../types/types'
 
-export default function Button({ text }: ButtonType) {
-  return <button className="button">{text}</button>
-}
+export const Button: React.FC<ButtonType> = ({ text, onClick, ...props }: ButtonType) => (
+  <button onClick={onClick} {...props}>
+    {text}
+  </button>
+)

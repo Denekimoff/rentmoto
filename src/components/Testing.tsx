@@ -1,6 +1,6 @@
 import React from 'react'
 import Wrapper from './Wrapper'
-import Button from './Button'
+import { Button } from './Button'
 import '../styles/testing.css'
 
 export default function Testing() {

@@ -178,6 +178,32 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       },
     ],
   },
+  booking: {
+    selectedRoute: null,
+    isModalOpen: false,
+  },
+  setSelectedRoute: (route: string) =>
+    set((state) => ({
+      booking: {
+        ...state.booking,
+        selectedRoute: route,
+      },
+    })),
+  openBookingModal: () =>
+    set((state) => ({
+      booking: {
+        ...state.booking,
+        isModalOpen: true,
+      },
+    })),
+  closeBookingModal: () =>
+    set((state) => ({
+      booking: {
+        ...state.booking,
+        selectedRoute: null,
+        isModalOpen: false,
+      },
+    })),
 }))
 
 export default storeStates

@@ -2,7 +2,7 @@ import React from 'react'
 import Wrapper from './Wrapper'
 import Navmenu from './Navmenu'
 import Logotip from '/logo.svg'
-import Button from './Button'
+import { Button } from './Button'
 import { Link } from 'react-scroll'
 import '../styles/header.css'
 
