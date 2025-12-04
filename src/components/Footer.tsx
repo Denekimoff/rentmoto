@@ -5,9 +5,7 @@ import Wrapper from './Wrapper'
 export default function Footer() {
   return (
     <footer className="footer">
-      <Wrapper>
-        <Link to="/">Home</Link> • <Link to="/about">About</Link>
-      </Wrapper>
+      <Wrapper></Wrapper>
     </footer>
   )
 }

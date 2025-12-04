@@ -97,3 +97,19 @@
     bottom: 1.5rem;
   }
 }
+
+@media (max-width: 560px) {
+  .gift__container__cart {
+    flex-direction: column-reverse;
+  }
+  .gift__container__cart__image {
+    max-width: 100%;
+  }
+  .gift__container__cart__image__description {
+    left: 1rem;
+    bottom: 1rem;
+  }
+  .gift__container__cart__info {
+    max-width: 90%;
+  }
+}

@@ -49,3 +49,16 @@
   font-size: 1rem;
   font-weight: 400;
 }
+
+@media (max-width: 560px) {
+  .offer__list__item {
+    max-width: 45%;
+    padding-bottom: 2rem;
+  }
+  .offer__list__item > h4 {
+    text-align: center;
+  }
+  .offer__list__item > p {
+    text-align: center;
+  }
+}

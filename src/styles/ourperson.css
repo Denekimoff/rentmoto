@@ -61,3 +61,12 @@
   font-weight: 300;
   line-height: 130%;
 }
+
+@media (max-width: 560px) {
+  .ourperson__container__list {
+    flex-wrap: wrap;
+  }
+  .ourperson__container__list__item {
+    max-width: 48%;
+  }
+}

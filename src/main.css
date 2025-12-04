@@ -90,11 +90,11 @@ html {
 
 @media (max-width: 600px) {
   html {
-    font-size: 8px;
+    font-size: 14px;
   }
 
   .wrapper {
-    max-width: 98%;
+    max-width: 96%;
   }
 }
 

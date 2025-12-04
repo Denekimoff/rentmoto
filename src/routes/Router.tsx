@@ -9,7 +9,6 @@ export default function RouterComponent() {
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
       </Route>
     </Routes>
   )

@@ -21,7 +21,7 @@
 .banner-view__title {
   padding-top: 20vh;
   padding-bottom: 3rem;
-  max-width: 50vw;
+  width: 50%;
   font-size: 4rem;
   font-weight: 800;
   line-height: 120%;
@@ -61,4 +61,19 @@
 
 .banner-view__link:active {
   scale: calc(1.05);
+}
+
+@media (max-width: 560px) {
+  .banner-view__title {
+    width: 100%;
+    padding-top: 15vh;
+    text-align: center;
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner-view__title {
+    font-size: 3rem;
+  }
 }

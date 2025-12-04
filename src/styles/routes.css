@@ -140,3 +140,12 @@
   width: 47%;
   object-fit: fill;
 }
+
+@media (max-width: 560px) {
+  .routes__container__list__item__images {
+    display: none;
+  }
+  .routes__container__list__item__info {
+    width: 100%;
+  }
+}

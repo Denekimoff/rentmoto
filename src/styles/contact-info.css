@@ -4,12 +4,6 @@
   width: 49%;
 }
 
-@media (max-width: 860px) {
-  .contact-info {
-    width: 100%;
-  }
-}
-
 .contact-info__address {
   display: flex;
   flex-direction: row;
@@ -62,7 +56,16 @@
 }
 
 @media (max-width: 860px) {
+  .contact-info {
+    width: 100%;
+  }
   .contact-info__social {
     border: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-info__address {
+    flex-direction: column-reverse;
   }
 }

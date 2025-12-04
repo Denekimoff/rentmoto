@@ -17,6 +17,7 @@
   font-size: var(--fz-h3-h4);
   font-weight: 600;
   line-height: 130%;
+  text-align: center;
 }
 
 .testing__container__description {
@@ -25,6 +26,7 @@
   font-size: 1rem;
   font-weight: 300;
   line-height: 130%;
+  text-align: center;
 }
 
 .testing__container > button {
