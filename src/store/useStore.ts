@@ -86,7 +86,7 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       {
         name: 'Юлиана',
         job: 'руководитель',
-        avatar: '/ourperson1.webp',
+        avatar: '/ourperson4.webp',
       },
       {
         name: 'Максим',
@@ -101,7 +101,7 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       {
         name: 'Юрий',
         job: 'старший механик',
-        avatar: '/ourperson4.webp',
+        avatar: '/ourperson1.webp',
       },
     ],
     conditionsData: [

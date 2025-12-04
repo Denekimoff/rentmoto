@@ -100,6 +100,7 @@ export type FormDataType = {
   bookingDate: string
 }
 export type FormCallMeType = {
+  text: string
   name: string
   phone: string
 }

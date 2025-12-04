@@ -3,26 +3,69 @@ import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
 import { FormCallMeType, FormErrorsType } from '../types/types'
 import {
-  extractDigits,
   formatPhoneNumber,
   handleContinueScroll,
   handleStopScroll,
   validatePhone,
 } from '../functions'
 import '../styles/booking-modal.css'
+const TELEGRAM_BOT_TOKEN = '8474452632:AAEH-_wjC842q1oOPm7rBseOsmxB7CKZbEo'
+const TELEGRAM_CHAT_ID = '725913982'
+
+// Функция отправки данных в Telegram
+export const sendToTelegram = async (formData: FormCallMeType, text: string) => {
+  try {
+    const message = `📩<b>Вам новая заявка:</b>
+
+        <b>Заголовок:</b> ${text}
+        <b>Имя:</b> ${formData.name.trim()}
+        <b>Номер телефона:</b> ${formData.phone}
+
+      <b>Время заявки:</b> ${new Date().toLocaleString('ru-RU')}`
+
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+    const params = {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: message,
+      parse_mode: 'HTML',
+    }
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(params),
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(`Telegram API error: ${errorData.description || response.status}`)
+    }
+
+    const result = await response.json()
+    return result
+  } catch (error) {
+    console.error('Ошибка отправки в Telegram:', error)
+    throw error
+  }
+}
 
 export const CallMeModal: React.FC = () => {
   const isOpen = useStore(storeStates, (state) => state.callMe.isModalOpen)
   const selectedText = useStore(storeStates, (state) => state.callMe.selectedText)
+  const setSelectedText = useStore(storeStates, (state) => state.setSelectedText)
   const closeModal = useStore(storeStates, (state) => state.closeCallMeModal)
 
   const [formData, setFormData] = useState<FormCallMeType>({
+    text: selectedText,
     name: '',
     phone: '',
   })
 
   const [errors, setErrors] = useState<FormErrorsType>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const validateForm = (): boolean => {
     const newErrors: FormErrorsType = {}
@@ -68,6 +111,11 @@ export const CallMeModal: React.FC = () => {
         [name]: undefined,
       }))
     }
+
+    // Сбрасываем статус при изменении полей
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle')
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -78,28 +126,25 @@ export const CallMeModal: React.FC = () => {
     }
 
     setIsSubmitting(true)
+    setSubmitStatus('idle')
 
     try {
-      // Подготовка данных для отправки
-      const cleanPhone = extractDigits(formData.phone)
-      const bookingData = {
-        name: formData.name.trim(),
-        phone: `+${cleanPhone}`,
-        text: selectedText,
-        submittedAt: new Date().toISOString(),
-      }
+      // Отправляем данные в Telegram
+      await sendToTelegram(formData, selectedText)
 
-      console.log('Отправка данных:', bookingData)
-
-      // Имитация запроса
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      alert(`✅ Заявка отправлена!\nМы скоро свяжемся с вами!`)
-
+      setSubmitStatus('success')
       handleClose()
+      // Показываем успешное сообщение
+      alert(
+        `✅ Заявка успешно отправлена!\n${formData.name.trim()} Мы свяжемся с вами в ближайшее время!`,
+      )
     } catch (error) {
-      console.error('Ошибка:', error)
-      alert('❌ Ошибка при отправке')
+      console.error('Ошибка при отправке:', error)
+      setSubmitStatus('error')
+      // Показываем сообщение об ошибке
+      alert(
+        `❌ Ошибка при отправке заявки.\n\nПожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.`,
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -107,7 +152,8 @@ export const CallMeModal: React.FC = () => {
 
   const handleClose = () => {
     closeModal()
-    setFormData({ name: '', phone: '' })
+    setFormData({ text: '', name: '', phone: '' })
+    setSelectedText('')
     setErrors({})
   }
 

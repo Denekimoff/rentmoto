@@ -1,3 +1,5 @@
+import { FormDataType } from './types/types'
+
 //------- Блокируем скролл
 export function handleStopScroll() {
   // Сохраняем текущую позицию скролла
