@@ -73,7 +73,13 @@
 }
 
 @media (max-width: 400px) {
+  .banner-view {
+    align-items: center;
+  }
   .banner-view__title {
     font-size: 3rem;
+  }
+  .banner-view__description {
+    text-align: center;
   }
 }

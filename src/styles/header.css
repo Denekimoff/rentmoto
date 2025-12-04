@@ -14,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .header__container__logo__link > img {
@@ -21,7 +22,8 @@
   cursor: pointer;
 }
 
-.header__container__contact-box {
+/* Десктопная версия контактов */
+.header__container__contact-box--desktop {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,18 +31,75 @@
   gap: 0.3rem;
 }
 
+/* Бургер-меню */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.header__burger-line {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.header__burger--active .header__burger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.header__burger--active .header__burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger--active .header__burger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Затемнение фона */
+.header__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+}
+
+/* Навигационное меню */
+.header__nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Мобильная версия контактов */
+.header__container__contact-box--mobile {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .header__container__contact-box > a {
-  /* margin-left: 1rem; */
   position: relative;
   color: #ffffff;
   transition: color 0.3s;
 }
-
-/* .header__container__contact-box > a::after {
-  position: absolute;
-  content: '\260E';
-  left: -1.5rem;
-} */
 
 .header__container__contact-box > .button {
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
@@ -63,8 +122,76 @@
 .header__container__contact-box > .button:active {
   transform: scale(1.05);
 }
+
 @media (hover: none) {
   .header__container__contact-box > .button:active {
     background-color: var(--green-hover);
+  }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 560px) {
+  .header__container__logo__link > img {
+    max-width: 3rem;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__nav-wrapper {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg-grey);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  .header__nav-wrapper--active {
+    right: 0;
+  }
+
+  .header__overlay {
+    display: block;
+  }
+
+  .header__container__contact-box--desktop {
+    display: none;
+  }
+
+  .header__container__contact-box--mobile {
+    display: flex;
+    width: 100%;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-menu__list {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-menu__list__item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu__list__item__link {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
 }
