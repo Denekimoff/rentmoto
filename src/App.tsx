@@ -1,8 +1,8 @@
-import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import { lazy } from 'react'
+import { Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import './App.css'
-import Footer from './components/Footer'
+const LazyFooter = lazy(() => import('./components/Footer'))
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <main className="main">
         <Outlet />
       </main>
-      <Footer />
+      <LazyFooter />
     </div>
   )
 }

@@ -1,0 +1,14 @@
+.yandex-metrics {
+  width: 100%;
+  height: 35rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 860px) {
+  .yandex-metrics {
+    height: 70rem;
+    flex-direction: column;
+  }
+}

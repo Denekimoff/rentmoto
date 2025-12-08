@@ -6,53 +6,11 @@ import {
   formatPhoneNumber,
   handleContinueScroll,
   handleStopScroll,
+  sendToTelegram,
   validateDate,
   validatePhone,
 } from '../functions'
 import '../styles/booking-modal.css'
-const TELEGRAM_BOT_TOKEN = '8474452632:AAEH-_wjC842q1oOPm7rBseOsmxB7CKZbEo'
-const TELEGRAM_CHAT_ID = '725913982'
-
-// Функция отправки данных в Telegram
-export const sendToTelegram = async (formData: FormDataType, selectedRoute?: string) => {
-  try {
-    const message = `📩<b>Вам новая заявка:</b>
-
-        <b>Имя:</b> ${formData.name.trim()}
-        <b>Номер телефона:</b> ${formData.phone}
-        <b>Никнейм телеграм:</b> ${formData.telegram?.trim() || 'не указан'}
-        <b>Выбранный маршрут:</b> ${selectedRoute}
-        <b>Выбранная дата:</b> ${formData.bookingDate}
-
-      <b>Время заявки:</b> ${new Date().toLocaleString('ru-RU')}`
-
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
-
-    const params = {
-      chat_id: TELEGRAM_CHAT_ID,
-      text: message,
-      parse_mode: 'HTML',
-    }
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(params),
-    })
-
-    if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(`Telegram API error: ${errorData.description || response.status}`)
-    }
-
-    const result = await response.json()
-    return result
-  } catch (error) {
-    console.error('Ошибка отправки в Telegram:', error)
-    throw error
-  }
-}
 
 export const BookingModal: React.FC = () => {
   const isOpen = useStore(storeStates, (state) => state.booking.isModalOpen)
@@ -142,7 +100,11 @@ export const BookingModal: React.FC = () => {
 
     try {
       // Отправляем данные в Telegram
-      const result = await sendToTelegram(formData, selectedRoute || 'Не указан')
+      const result = await sendToTelegram(
+        formData,
+        'Бронирование маршрута',
+        selectedRoute || 'Не указан',
+      )
       if (result.ok) {
         setSubmitStatus('success')
         handleClose()

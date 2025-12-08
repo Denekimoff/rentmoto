@@ -38,7 +38,7 @@ export default function Routes() {
                     </p>
                   </div>
                   <div className="routes__container__list__item__info__route">
-                    <h6>МАРШРУТ:</h6>
+                    <span>МАРШРУТ:</span>
                     <p>{el.route}</p>
                   </div>
                   <Button text="Забронировать" onClick={() => handleBookClick(el.title)} />

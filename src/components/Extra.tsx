@@ -14,7 +14,7 @@ export default function Extra() {
           <ul className="extra__container__list">
             {extraData.map((el, id) => (
               <li key={id} className="extra__container__list__item">
-                <img src={el.src} alt={el.text} className="extra__container__list__item__image" />
+                <img src={el.src} alt={el.alt} className="extra__container__list__item__image" />
                 <div className="extra__container__list__item__info">
                   <p>{el.text}</p>
                 </div>

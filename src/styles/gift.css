@@ -112,4 +112,8 @@
   .gift__container__cart__info {
     max-width: 90%;
   }
+  .gift__container__cart__info > p {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
 }

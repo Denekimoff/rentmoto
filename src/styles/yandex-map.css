@@ -1,8 +1,8 @@
 @import '../main.css';
 
 .yandex-map {
-  width: 49%;
-  height: 30rem;
+  width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

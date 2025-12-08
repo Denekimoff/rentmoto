@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
 import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
+import { handleStopScroll, handleContinueScroll } from '../functions'
 import Wrapper from './Wrapper'
 import Navmenu from './Navmenu'
 import { Button } from './Button'
@@ -16,7 +17,6 @@ export default function Header() {
   const handleButtonClick = (text: string) => {
     setText(text)
     openCallMeModal()
-    // Закрываем меню при клике на кнопку на мобильных устройствах
     if (window.innerWidth <= 560) {
       setIsMenuOpen(false)
     }
@@ -30,39 +30,51 @@ export default function Header() {
     setIsMenuOpen(false)
   }
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      handleStopScroll()
+      return () => {
+        handleContinueScroll()
+      }
+    }
+  }, [isMenuOpen])
+
   return (
     <header className="header">
       <Wrapper>
         <div className="header__container">
           <div className="header__container__logo">
             <Link
+              href="#"
               to="banner"
               smooth={true}
               duration={500}
               className="header__container__logo__link"
               onClick={closeMenu}
+              aria-label="Главная"
+              title="Перейти к секции Главная"
+              tabIndex={0}
             >
               <img src={Logotip} alt="logo" />
             </Link>
           </div>
 
-          {/* Бургер-иконка */}
           <button
             className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
             onClick={toggleMenu}
             aria-label="Открыть меню"
             aria-expanded={isMenuOpen}
+            tabIndex={0}
           >
             <span className="header__burger-line"></span>
             <span className="header__burger-line"></span>
             <span className="header__burger-line"></span>
           </button>
 
-          {/* Навигационное меню */}
           <div className={`header__nav-wrapper ${isMenuOpen ? 'header__nav-wrapper--active' : ''}`}>
             <Navmenu onLinkClick={closeMenu} />
             <div className="header__container__contact-box header__container__contact-box--mobile">
-              <a href="tel:+375298734927" onClick={closeMenu}>
+              <a href="tel:+375298734927" onClick={closeMenu} tabIndex={0}>
                 +375 (29) 123-45-67
               </a>
               <Button text="Перезвоните мне" onClick={() => handleButtonClick('Перезвоните мне')} />
@@ -71,7 +83,9 @@ export default function Header() {
 
           {/* Десктопная версия контактов */}
           <div className="header__container__contact-box header__container__contact-box--desktop">
-            <a href="tel:+375298734927">+375 (29) 123-45-67</a>
+            <a href="tel:+375298734927" tabIndex={0}>
+              +375 (29) 123-45-67
+            </a>
             <Button text="Перезвоните мне" onClick={() => handleButtonClick('Перезвоните мне')} />
           </div>
         </div>

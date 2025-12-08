@@ -1,8 +1,8 @@
 import React from 'react'
 import Wrapper from './Wrapper'
 import ContactInfo from './ContactInfo'
-import YandexMap from './YandexMap'
 import '../styles/contacts.css'
+import YandexMetrics from './YandexMetrics'
 
 export default function Contacts() {
   return (
@@ -12,7 +12,7 @@ export default function Contacts() {
           <h3 className="contacts__container__title">Контакты</h3>
           <div className="contacts__container__menu">
             <ContactInfo />
-            <YandexMap />
+            <YandexMetrics />
           </div>
         </div>
       </Wrapper>

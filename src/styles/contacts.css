@@ -13,13 +13,8 @@
 
 .contacts__container__menu {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-}
-
-@media (max-width: 860px) {
-  .contacts__container__menu {
-    flex-direction: column;
-  }
 }

@@ -1,0 +1,14 @@
+@import '../main.css';
+.footer {
+  width: 100vw;
+  padding: 2rem 0;
+  background-color: var(--bg-header);
+  color: var(--text-banner);
+}
+.footer__container {
+  margin: 0;
+  text-align: center;
+}
+.footer__container__text {
+  font-weight: 300;
+}

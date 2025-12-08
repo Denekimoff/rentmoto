@@ -2,7 +2,6 @@ import { FormDataType } from './types/types'
 
 //------- Блокируем скролл
 export function handleStopScroll() {
-  // Сохраняем текущую позицию скролла
   const scrollY = window.scrollY
 
   document.body.style.position = 'fixed'
@@ -10,7 +9,6 @@ export function handleStopScroll() {
   document.body.style.width = '100%'
   document.body.style.overflowY = 'scroll'
 
-  // Сохраняем позицию скролла для восстановления
   document.body.dataset.scrollY = scrollY.toString()
 }
 
@@ -36,7 +34,7 @@ export const extractDigits = (phone: string): string => {
 export const formatPhoneNumber = (input: string): string => {
   let digits = extractDigits(input)
 
-  // Если начинается с 80 (белорусский формат), меняем на 375
+  // Если начинается с 80, меняем на 375
   if (digits.startsWith('80') && digits.length >= 2) {
     digits = '375' + digits.substring(2)
   }
@@ -99,4 +97,53 @@ export const validateDate = (date: string): boolean => {
   today.setHours(0, 0, 0, 0)
 
   return selectedDate >= today
+}
+
+const TELEGRAM_BOT_TOKEN = '8474452632:AAEH-_wjC842q1oOPm7rBseOsmxB7CKZbEo'
+const TELEGRAM_CHAT_ID = '725913982'
+
+// Функция отправки данных в Telegram
+export const sendToTelegram = async (
+  formData: FormDataType,
+  selectedText: string,
+  selectedRoute: string,
+) => {
+  try {
+    const message = `📩<b>Вам новая заявка:</b>
+
+        <b>Заголовок:</b> ${selectedText}
+        <b>Имя:</b> ${formData.name.trim()}
+        <b>Номер телефона:</b> ${formData.phone}
+        <b>Никнейм телеграм:</b> ${formData.telegram?.trim() || 'не указан'}
+        <b>Выбранный маршрут:</b> ${selectedRoute}
+        <b>Выбранная дата:</b> ${formData.bookingDate || '-'}
+
+      <b>Время заявки:</b> ${new Date().toLocaleString('ru-RU')}`
+
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+    const params = {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: message,
+      parse_mode: 'HTML',
+    }
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(params),
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(`Telegram API error: ${errorData.description || response.status}`)
+    }
+
+    const result = await response.json()
+    return result
+  } catch (error) {
+    console.error('Ошибка отправки в Telegram:', error)
+    throw error
+  }
 }

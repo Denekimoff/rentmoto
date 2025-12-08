@@ -5,7 +5,7 @@
   top: 0;
   width: 100vw;
   color: var(--text-banner);
-  background-color: var(--bg-grey);
+  background-color: var(--bg-header);
   padding: 0.5rem 0;
   z-index: 100;
 }
@@ -74,7 +74,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 98;
 }
 
@@ -146,7 +146,7 @@
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background-color: var(--bg-grey);
+    background-color: var(--bg-header);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;

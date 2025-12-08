@@ -1,16 +1,16 @@
-import React from 'react'
+import { lazy } from 'react'
 import Banner from '../components/Banner'
 import Offer from '../components/Offer'
 import Routes from '../components/Routes'
 import Testing from '../components/Testing'
-import Gallery from '../components/Gallery'
-import OurPerson from '../components/OurPerson'
-import Conditions from '../components/Conditions'
-import Sales from '../components/Sales'
-import Gift from '../components/Gift'
-import Contacts from '../components/Contacts'
-import Extra from '../components/Extra'
-import { CallMeModal } from '../components/CallMeModal'
+const LazyGallery = lazy(() => import('../components/Gallery'))
+const LazyOurPerson = lazy(() => import('../components/OurPerson'))
+const LazyConditions = lazy(() => import('../components/Conditions'))
+const LazySales = lazy(() => import('../components/Sales'))
+const LazyGift = lazy(() => import('../components/Gift'))
+const LazyExtra = lazy(() => import('../components/Extra'))
+const LazyContacts = lazy(() => import('../components/Contacts'))
+const LazyCallMeModal = lazy(() => import('../components/CallMeModal'))
 import '../styles/home.css'
 
 export default function Home() {
@@ -20,14 +20,14 @@ export default function Home() {
       <Offer />
       <Routes />
       <Testing />
-      <Gallery />
-      <OurPerson />
-      <Conditions />
-      <Sales />
-      <Gift />
-      <Extra />
-      <Contacts />
-      <CallMeModal />
+      <LazyGallery />
+      <LazyOurPerson />
+      <LazyConditions />
+      <LazySales />
+      <LazyGift />
+      <LazyExtra />
+      <LazyContacts />
+      <LazyCallMeModal />
     </div>
   )
 }

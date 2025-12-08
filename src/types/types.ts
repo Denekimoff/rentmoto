@@ -8,6 +8,7 @@ export type ImageType = Array<string>
 export type NavListDataType = {
   section: string
   text: string
+  title: string
 }
 
 export type RouteDataType = {
@@ -45,17 +46,20 @@ export type SalesDataType = {
 export type ExtraDataType = {
   text: string
   src: string
+  alt: string
 }
 
 export type ContactsDataType = {
   text: string
   href: string
+  label: string
 }
 
 export type SocialDataType = {
   alt: string
   href: string
   src: string
+  label: string
 }
 
 export type DataStateType = {
@@ -97,12 +101,7 @@ export type FormDataType = {
   name: string
   phone: string
   telegram: string
-  bookingDate: string
-}
-export type FormCallMeType = {
-  text: string
-  name: string
-  phone: string
+  bookingDate?: string
 }
 
 export type FormErrorsType = {
@@ -110,4 +109,8 @@ export type FormErrorsType = {
   phone?: string
   telegram?: string
   bookingDate?: string
+}
+
+export interface NavmenuProps {
+  onLinkClick?: () => void
 }

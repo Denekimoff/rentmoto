@@ -1,66 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
-import { FormCallMeType, FormErrorsType } from '../types/types'
+import { FormDataType, FormErrorsType } from '../types/types'
 import {
   formatPhoneNumber,
   handleContinueScroll,
   handleStopScroll,
+  sendToTelegram,
   validatePhone,
 } from '../functions'
 import '../styles/booking-modal.css'
-const TELEGRAM_BOT_TOKEN = '8474452632:AAEH-_wjC842q1oOPm7rBseOsmxB7CKZbEo'
-const TELEGRAM_CHAT_ID = '725913982'
 
-// Функция отправки данных в Telegram
-export const sendToTelegram = async (formData: FormCallMeType, text: string) => {
-  try {
-    const message = `📩<b>Вам новая заявка:</b>
-
-        <b>Заголовок:</b> ${text}
-        <b>Имя:</b> ${formData.name.trim()}
-        <b>Номер телефона:</b> ${formData.phone}
-
-      <b>Время заявки:</b> ${new Date().toLocaleString('ru-RU')}`
-
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
-
-    const params = {
-      chat_id: TELEGRAM_CHAT_ID,
-      text: message,
-      parse_mode: 'HTML',
-    }
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(params),
-    })
-
-    if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(`Telegram API error: ${errorData.description || response.status}`)
-    }
-
-    const result = await response.json()
-    return result
-  } catch (error) {
-    console.error('Ошибка отправки в Telegram:', error)
-    throw error
-  }
-}
-
-export const CallMeModal: React.FC = () => {
+export default function CallMeModal() {
   const isOpen = useStore(storeStates, (state) => state.callMe.isModalOpen)
   const selectedText = useStore(storeStates, (state) => state.callMe.selectedText)
   const setSelectedText = useStore(storeStates, (state) => state.setSelectedText)
   const closeModal = useStore(storeStates, (state) => state.closeCallMeModal)
 
-  const [formData, setFormData] = useState<FormCallMeType>({
-    text: selectedText,
+  const [formData, setFormData] = useState<FormDataType>({
     name: '',
     phone: '',
+    telegram: '',
   })
 
   const [errors, setErrors] = useState<FormErrorsType>({})
@@ -130,18 +90,16 @@ export const CallMeModal: React.FC = () => {
 
     try {
       // Отправляем данные в Telegram
-      await sendToTelegram(formData, selectedText)
+      await sendToTelegram(formData, selectedText, '-')
 
       setSubmitStatus('success')
       handleClose()
-      // Показываем успешное сообщение
       alert(
-        `✅ Заявка успешно отправлена!\n${formData.name.trim()} Мы свяжемся с вами в ближайшее время!`,
+        `✅ Заявка успешно отправлена!\n${formData.name.trim()}, мы свяжемся с вами в ближайшее время!`,
       )
     } catch (error) {
       console.error('Ошибка при отправке:', error)
       setSubmitStatus('error')
-      // Показываем сообщение об ошибке
       alert(
         `❌ Ошибка при отправке заявки.\n\nПожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.`,
       )
@@ -152,7 +110,7 @@ export const CallMeModal: React.FC = () => {
 
   const handleClose = () => {
     closeModal()
-    setFormData({ text: '', name: '', phone: '' })
+    setFormData({ name: '', phone: '', telegram: '', bookingDate: '' })
     setSelectedText('')
     setErrors({})
   }
@@ -205,6 +163,19 @@ export const CallMeModal: React.FC = () => {
               className={errors.phone ? 'error' : ''}
             />
             {errors.phone && <span className="error-message">{errors.phone}</span>}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="telegram">Никнейм в Телеграм (необязательно)</label>
+            <input
+              type="text"
+              id="telegram"
+              name="telegram"
+              value={formData.telegram}
+              onChange={handleChange}
+              placeholder="@username"
+              disabled={isSubmitting}
+            />
           </div>
 
           <div className="form-footer">

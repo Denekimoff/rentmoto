@@ -14,7 +14,9 @@ export default function Offer() {
             <li key={id} className="offer__list__item">
               <img src={logo} alt="Logo" />
               <span />
-              <h4>{title}</h4>
+              <p>
+                <strong>{title}</strong>
+              </p>
               <p>{description}</p>
             </li>
           ))}

@@ -2,14 +2,14 @@
 
 :root {
   --section-padding: 3rem 0;
-  --bg-avatar: #f4f4f4;
-  --bg-grey: #00000070;
+  --bg-avatar: #f7f7f7;
+  --bg-header: #00000070;
   --text: #121214;
   --fz-h3-h4: 2rem;
   --text-banner: #ffffff;
   --grey: #919395;
   --green: #037e8c;
-  --green-hover: #01616b;
+  --green-hover: #015c65;
   --green-active: rgb(6, 200, 207);
 }
 

@@ -7,18 +7,22 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       {
         section: 'routes',
         text: 'МАРШРУТЫ',
+        title: 'Перейти к секции Маршруты',
       },
       {
         section: 'gallery',
         text: 'ГАЛЕРЕЯ',
+        title: 'Перейти к секции Галерея',
       },
       {
         section: 'sales',
         text: 'АКЦИИ',
+        title: 'Перейти к секции Акции',
       },
       {
         section: 'contacts',
         text: 'КОНТАКТЫ',
+        title: 'Перейти к секции Контакты',
       },
     ],
     offerData: [
@@ -78,20 +82,20 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       '/gallery1.webp',
       '/gallery2.webp',
       '/gallery3.webp',
+      '/gallery1.webp',
       '/gallery2.webp',
       '/gallery3.webp',
-      '/gallery1.webp',
     ],
     ourPersonsData: [
       {
         name: 'Юлиана',
         job: 'руководитель',
-        avatar: '/ourperson4.webp',
+        avatar: '/ourperson1.webp',
       },
       {
         name: 'Максим',
         job: 'старший инструктор',
-        avatar: '/ourperson2.webp',
+        avatar: '/ourperson4.webp',
       },
       {
         name: 'Кристина',
@@ -101,7 +105,7 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       {
         name: 'Юрий',
         job: 'старший механик',
-        avatar: '/ourperson1.webp',
+        avatar: '/ourperson2.webp',
       },
     ],
     conditionsData: [
@@ -128,49 +132,59 @@ const storeStates = createStore<StoreStatesType>()((set) => ({
       {
         text: 'Эвакуация, ремонт квадроциклов',
         src: '/extra-1.webp',
+        alt: 'Фото 1',
       },
       {
         text: 'Транспортировка техники',
         src: '/extra-2.webp',
+        alt: 'Фото 2',
       },
       {
         text: 'Заправка, чекап, мойка',
         src: '/extra-3.webp',
+        alt: 'Фото 3',
       },
       {
         text: 'Индивидуальные маршруты',
         src: '/extra-4.webp',
+        alt: 'Фото 4',
       },
     ],
     contactsData: [
       {
         text: '+375 (29) 123-45-67',
         href: 'tel:+375298734927',
+        label: 'Позвонить на телефон',
       },
       {
         text: 'rent-moto@gmail.com',
         href: 'mailto:ekimoffdenis@gmail.com',
+        label: 'Отправить email',
       },
       {
         text: 'Минск, улица Западная 19а',
         href: 'https://yandex.by/maps/org/kvadromototsentr/108734637626/?utm_medium=mapframe&utm_source=maps',
+        label: 'Проложить маршрут в Яндекс навигаторе',
       },
     ],
     socialData: [
       {
-        alt: 'telegram',
+        alt: 'Telegram',
         href: 'https://t.me/@ekmvdn',
         src: '/social-telegram.svg',
+        label: 'Написать в Telegram',
       },
       {
-        alt: 'instagram',
+        alt: 'Instagram',
         href: 'https://www.instagram.com/',
         src: '/social-instagram.svg',
+        label: 'Написать в Instagram',
       },
       {
-        alt: 'whatsapp',
+        alt: 'Whatsapp',
         href: 'https://www.whatsapp.com/?lang=ru',
         src: '/social-whatsapp.svg',
+        label: 'Написать в Whatsapp',
       },
     ],
   },

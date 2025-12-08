@@ -12,7 +12,7 @@ export default function ContactInfo() {
         <ul className="contact-info__address__list">
           {contactsData.map((el, id) => (
             <li key={id} className="contact-info__address__list__item">
-              <a target="_blank" href={el.href}>
+              <a target="_blank" href={el.href} area-label={el.label} tabIndex={0}>
                 {el.text}
               </a>
             </li>
@@ -27,7 +27,7 @@ export default function ContactInfo() {
         <ul className="contact-info__social__list">
           {socialData.map((el, id) => (
             <li key={id} className="contact-info__social__list__item">
-              <a target="_blank" href={el.href}>
+              <a target="_blank" href={el.href} aria-label={el.label} tabIndex={0}>
                 <img src={el.src} alt={el.alt} />
               </a>
             </li>
