@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { useStore } from 'zustand'
 import storeStates from '../store/useStore'
-import { handleStopScroll, handleContinueScroll } from '../functions'
 import Wrapper from './Wrapper'
 import Navmenu from './Navmenu'
 import { Button } from './Button'
@@ -29,15 +28,6 @@ export default function Header() {
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      handleStopScroll()
-      return () => {
-        handleContinueScroll()
-      }
-    }
-  }, [isMenuOpen])
 
   return (
     <header className="header">

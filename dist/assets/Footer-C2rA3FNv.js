@@ -1,1 +1,0 @@
-import{j as e,W as r}from"./index-DyUBXcuB.js";function s(){const t=new Date().getFullYear();return e.jsx("footer",{className:"footer",children:e.jsx(r,{children:e.jsx("div",{className:"footer__container",children:e.jsxs("span",{className:"footer__container__text",children:["(c) ",t," ООО «КвадроМото». Все права защищены."]})})})})}export{s as default};
